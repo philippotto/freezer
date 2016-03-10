@@ -1,4 +1,4 @@
-/* freezer-js v0.10.0 (3-3-2016)
+/* freezer-js v0.10.0 (10-3-2016)
  * https://github.com/arqex/freezer
  * By arqex
  * License: MIT
@@ -171,7 +171,11 @@ var Utils = {
 
 	isLeaf: function( node ){
 		var cons = node && node.constructor;
-		return !cons || cons == String || cons == Number || cons == Boolean;
+		return !cons || cons == String || cons == Number || cons == Boolean || cons == Leaf;
+	},
+
+	createLeaf: function( value ) {
+		return new Leaf(value);
 	}
 };
 
